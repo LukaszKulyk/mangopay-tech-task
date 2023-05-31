@@ -16,13 +16,11 @@ jobs:
       - name: Setup and Use Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.14.0
-      - name: Install all needed dependences
-        run: npm install
-      - name: Init Playwright
-        run: npm install -D @playwright/test
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
       - name: Install Playwright Browsers
-        run: npx playwright install-deps
+        run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: npx playwright test
       # - uses: actions/upload-artifact@v3
