@@ -57,7 +57,7 @@ test.describe('Verify google maps search bar', () => {
     test.beforeEach(async ({ page }) => {
         
         await page.goto('/maps')
-        //this code below is a quick workaround for accept coockies subpage when running google. Not needed in CI/CD piplenie.
+        //this code below is a quick workaround for accept coockies subpage when running google. It is not needed in CI/CD piplenie.
         //const acceptAllCoockiesButtonLocator  = page.getByRole('button', { name: 'Accept all' });
         //acceptAllCoockiesButtonLocator.click();
         await expect(page).toHaveURL(confirmUrl);
