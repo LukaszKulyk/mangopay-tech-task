@@ -57,8 +57,8 @@ test.describe('Verify google maps search bar', () => {
     test.beforeEach(async ({ page }) => {
         
         await page.goto('/maps')
-        const acceptAllCoockiesButtonLocator  = page.getByRole('button', { name: 'Accept all' });
-        acceptAllCoockiesButtonLocator.click();
+        //const acceptAllCoockiesButtonLocator  = page.getByRole('button', { name: 'Accept all' });
+        //acceptAllCoockiesButtonLocator.click();
         await expect(page).toHaveURL(confirmUrl);
 
         const searchBar = new SearchBar(page);
