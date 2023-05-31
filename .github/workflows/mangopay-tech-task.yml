@@ -20,7 +20,7 @@ jobs:
       - name: Install all needed dependences
         run: npm install
       - name: Init Playwright
-        run: npm install playwright --save-dev
+        run: npm install -D @playwright/test
       # - name: Install Playwright Browsers
       #   run: npx playwright install --with-deps
       - name: Run Playwright tests
