@@ -8,7 +8,7 @@ on:
     branches: ["master"]
 
 jobs:
-  Run-Cypress-Tests:
+  Run-Playwright-Tests:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -19,12 +19,14 @@ jobs:
           node-version: 16.14.0
       - name: Install all needed dependences
         run: npm install
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-      - name: Run Playwright tests with list reporter
-        run: npx playwright test --reporter=list
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
+      - name: Init Playwright
+        run: npm init playwright@latest
+      # - name: Install Playwright Browsers
+      #   run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: npx playwright test
+      # - uses: actions/upload-artifact@v3
+      #   if: always()
+      #   with:
+      #     name: playwright-report
+      #     path: playwright-report/
